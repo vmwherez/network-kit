@@ -1,18 +1,27 @@
 from scapy.all import Dot11, Dot3, ARP, UDP, TCP, IP, Raw, STP, sniff, hexdump
 
-
+"""
+show us the full tree, you might see
+something about DNS 
+"""
 def dump_packet(p):
     print('Dumping Packet... ')
     print(p.show(dump=True))
 
 
+"""
+Give us that raw hexadecimal 
+"""
 def process_raw(p):
     if p.haslayer(Raw):
         load = p[Raw].load
         hexdump(load)
         print('\n')
 
-
+"""
+If we can't find TCP info 
+to pretty print, dump it
+"""
 def process_ip(p):
     if p.haslayer(TCP) :
         tcp = p[TCP]
@@ -26,6 +35,9 @@ def process_ip(p):
           dump_packet(p)
 
 
+"""
+Handle packets (p) when sniff sniffs them.
+"""
 def PacketHandler(p) :
 
     if p.haslayer(IP) :
