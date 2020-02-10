@@ -93,4 +93,4 @@ XX:XX:XX:XX:XX:XX | Free Stuff
 
 ## Conclusion
 
-In this demonstration we learned a little bit about `scapy`, network layers, packets, and our neighbor's affinity for Apple or Android. From here there is a a lot more to explore, proceed responsibly and at at your own risk!
+In this demonstration we learned a little bit about `scapy`, network layers, packets, and our neighbor's affinity for Apple or Android. From here there is a a lot more to explore. Proceed responsibly and at at your own risk!
