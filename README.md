@@ -31,7 +31,7 @@ def PacketHandler(p) :
 sniff(iface="wlan0", prn = PacketHandler)
 ```
 
-For all of the `scapy` examples you will need to change the network interface (`iface`) name. 
+These Scripts use the enviorment var `WIFI_INTERFACE` to get the wireless interface for the system. 
 
 Find your interfaces: 
 
@@ -44,6 +44,12 @@ eno1: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         TX packets 0  bytes 0 (0.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
         device interrupt 20  memory 0xe6f00000-f9e20000  
+```
+
+Then set the inerface by setting an enviorment var
+
+```
+WIFI_INTERFACE = "eno1"
 ```
 
 ### traffic.py

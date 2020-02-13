@@ -1,5 +1,8 @@
 from scapy.all import Dot11, Dot3, ARP, UDP, TCP, IP, Raw, STP, sniff, hexdump
 
+import os
+WIFI_INTERFACE = os.getenv('WIFI_INTERFACE')
+
 """
 show us the full tree, you might see
 something about DNS 
@@ -54,4 +57,4 @@ def PacketHandler(p) :
           # dump_packet(p)
 
 
-sniff(iface="enp0s20u3", prn = PacketHandler)
+sniff(iface=WIFI_INTERFACE, prn = PacketHandler)

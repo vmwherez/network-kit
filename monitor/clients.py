@@ -1,6 +1,10 @@
-from scapy.all import *
+from scapy.all import Dot11, sniff
 
 from mac_vendor_lookup import MacLookup
+
+import os
+WIFI_INTERFACE = os.getenv('WIFI_INTERFACE')
+
 
 mac = MacLookup()
 mac.load_vendors()  
@@ -26,4 +30,4 @@ def PacketHandler(p):
                 # sendp(RadioTap()/Dot11(type=0,subtype=12,addr1=p.addr2,addr2=p.addr3,addr3=p.addr3)/Dot11Deauth())
 
 
-sniff(iface="wlp2s0mon", prn=PacketHandler)
+sniff(iface=WIFI_INTERFACE, prn=PacketHandler)
