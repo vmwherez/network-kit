@@ -1,6 +1,9 @@
-from scapy.all import *
-# import local, modified version of mac_vendor_lookup
+from scapy.all import sniff
+# import local, modified version of mac_vendor_lookup 
 from mac_vendor_lookup import MacLookup
+
+import os
+WIFI_INTERFACE = os.getenv('WIFI_INTERFACE')
 
 mac = MacLookup()
 mac.load_vendors()  
@@ -19,4 +22,4 @@ def PacketHandler(p):
     print(find_mac(sn) + ' -> ' +  find_mac(rc))
     print("\n")
 
-sniff(iface="wlp2s0mon", prn=PacketHandler)
+sniff(iface=WIFI_INTERFACE, prn=PacketHandler)

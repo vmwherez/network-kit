@@ -1,6 +1,10 @@
 from scapy.all import RadioTap, Dot11, Dot11Elt, sniff, hexdump
 import sys
 
+import os
+WIFI_INTERFACE = os.getenv('WIFI_INTERFACE')
+
+
 MAC = str(sys.argv[1]) 
 print ("Hexdump of: %s" % MAC)
                        
@@ -18,4 +22,4 @@ def PacketHandler(p) :
      hexdump(p)
            
 
-sniff(iface="wlp2s0mon", prn = PacketHandler)
+sniff(iface=WIFI_INTERFACE, prn = PacketHandler)

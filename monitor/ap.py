@@ -1,5 +1,8 @@
 from scapy.all import Dot11, sniff
-                       
+
+import os
+WIFI_INTERFACE = os.getenv('WIFI_INTERFACE')
+
 # List of Access Points
 aps = []
 
@@ -17,4 +20,4 @@ def PacketHandler(p) :
                 print(str(p.addr2) + " | " + p.info.decode("utf-8"))
 
 
-sniff(iface="wlp2s0mon", prn = PacketHandler)
+sniff(iface=WIFI_INTERFACE, prn = PacketHandler)
