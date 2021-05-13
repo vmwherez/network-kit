@@ -26,4 +26,4 @@ def PacketHandler(p):
                 # sendp(RadioTap()/Dot11(type=0,subtype=12,addr1=p.addr2,addr2=p.addr3,addr3=p.addr3)/Dot11Deauth())
 
 
-sniff(iface="wlp2s0mon", prn=PacketHandler)
+sniff(iface="wlp3s0mon", prn=PacketHandler)

@@ -54,4 +54,4 @@ def PacketHandler(p) :
           # dump_packet(p)
 
 
-sniff(iface="enp0s20u3", prn = PacketHandler)
+sniff(iface=input("interface? "), prn = PacketHandler)

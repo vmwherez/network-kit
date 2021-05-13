@@ -17,4 +17,4 @@ def PacketHandler(p) :
                 print(str(p.addr2) + " | " + p.info.decode("utf-8"))
 
 
-sniff(iface="wlp2s0mon", prn = PacketHandler)
+sniff(iface="wlp3s0mon", prn = PacketHandler)

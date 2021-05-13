@@ -18,4 +18,4 @@ def PacketHandler(p) :
      hexdump(p)
            
 
-sniff(iface="wlp2s0mon", prn = PacketHandler)
+sniff(iface="wlp3s0mon", prn = PacketHandler)

@@ -19,4 +19,4 @@ def PacketHandler(p):
     print(find_mac(sn) + ' -> ' +  find_mac(rc))
     print("\n")
 
-sniff(iface="wlp2s0mon", prn=PacketHandler)
+sniff(iface="wlp3s0mon", prn=PacketHandler)
